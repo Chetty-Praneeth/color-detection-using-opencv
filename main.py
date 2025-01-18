@@ -22,8 +22,8 @@ while True:
 
     if bbox is not None:
         x1, y1, x2, y2 = bbox
-
-        frame = cv.rectangle(frame, (x1,y1), (x2,y2), (0,255,0), 5)
+        frame = cv.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 5)
+        cv.putText(frame, "Purple Object", (x1, y1 - 10), cv.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
 
     cv.imshow('Frame', frame)
 
