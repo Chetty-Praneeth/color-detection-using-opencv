@@ -12,6 +12,9 @@ while True:
     ret, frame = cap.read()
     hsvImage = cv.cvtColor(frame, cv.COLOR_BGR2HSV)
 
+    purple_hsv = cv.cvtColor(np.uint8([[purple]]), cv.COLOR_BGR2HSV)[0][0]
+    lowerLimit, upperLimit = get_limits(color=purple_hsv)
+
     lowerLimit, upperLimit = get_limits(color=purple)
     mask = cv.inRange(hsvImage, lowerLimit, upperLimit)
 
